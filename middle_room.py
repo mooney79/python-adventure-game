@@ -88,7 +88,7 @@ class MiddleRoom(Room):
         print(f"  ")
         print(f"---")
         print(f"  ")
-        print(f"You feel as if your best bet is to crawl on the ground and wave your hands around looking for anything. Any data you can collect will only help you piece together your perception") 
+        print(f"You feel as if your best bet is to crawl on the ground and wave your hands around looking for anything. Any data you can collect will only help you piece together your impaired perception") 
         print(f"  ")
         print(f"---")
         print(f"  ")
@@ -96,22 +96,87 @@ class MiddleRoom(Room):
         print(f"  ")
         print(f"---")
         print(f"  ")
-        print("You find the doorframe and look out into the dark abyss. You find a dresser in the hallway with three drawers in the top row and one big drawer at the bottom of the dresser. There is a note that states you need to open the first three drawers in the correct order, then the fourth drawer will open. You're intrigued") 
+        print("You find the doorframe and look out into the dark abyss. You find a dresser in the hallway with three drawers in the top row and one big drawer at the bottom of the dresser. There is a note that you can barely read stating you need to open the first three drawers in the correct order for the fourth drawer will open. You're intrigued.") 
         print(f"  ")
         print(f"---")
         print(f"  ")
-        if player.user_input == 's':
-            print(f"You start pondering whether we're in a based reality or not. Come on that's not going to help you right now. Pull your sheet together")
-            print(f"  ")
-            print(f"---")
-            print(f"  ")
-        elif player.user_input == 'd':
-            print(f"You do have an awful headache and cannot remember the last few days. Is this a product of going out to Gringos last night? You take four more advil from your pocket and dry swallow them. Lets get out of this house.")
-            print(f"  ")
-            print(f"---")
-            print(f"  ")
-        else:
-            print("Invalid input")
+
+        while True: 
+            player.user_input = input("Would you like to open the (1)st, (2)nd or (3)rd drawer first? ")
+            if player.user_input == '1':
+                print(f"  ")
+                print(f"---")
+                print(f"  ")
+                player.user_input = input("You have choosen the 1st drawer, would you like to open the (2)nd or (3)rd drawer now? ")
+                if player.user_input == '2':
+                    print(f"  ")
+                    print(f"---")
+                    print(f"  ")
+                    print("You have choosen the 2nd drawer as the 2nd choice. You now only have one more option, the 3rd drawer. You open the 3rd drawer and then (with a drip of sweat) try to open the final fourth drawer; however, it did not budge. Please try a different combination")
+                    print(f"  ")
+                    print(f"---")
+                    print(f"  ")
+                    continue
+                elif player.user_input == '3':
+                    print(f"  ")
+                    print(f"---")
+                    print(f"  ")
+                    print("You have choosen the 3rd drawer as the 2nd choice. You now only have one more option, the 2nd drawer. You open the 2nd drawer and then (with a drip of sweat running down your cheek) try to open the final fourth drawer; however, it did not budge. Please try a different combination")
+                    print(f" ")
+                    print(f"---")
+                    print(f" ")
+                    continue
+            elif player.user_input == '2':
+                print(f"  ")
+                print(f"---")
+                print(f"  ")
+                player.user_input = input("You have choosen the 2nd drawer, would you like to open the (1)st or (3)rd drawer now? ")
+                if player.user_input == '1':
+                    print(f"  ")
+                    print(f"---")
+                    print(f"  ")
+                    print("You have choosen the 1st drawer as the 2nd choice. You now only have one more option, the 3rd drawer. You open the 3rd drawer and then (with a drip of sweat) try to open the final fourth drawer; however, it did not budge. Please try a different combination")
+                    print(f" ")
+                    print(f"---")
+                    print(f" ")
+                    continue
+                elif player.user_input == '3':
+                    print(f"  ")
+                    print(f"---")
+                    print(f"  ")
+                    print("You have choosen the 3rd drawer as the 2nd choice. You now only have one more option, the 1st drawer. You open the 1st drawer and then (with a drip of sweat running down your cheek)...... ")
+                    print(".......")
+                    print("..................")
+                    print("The final fourth drawer opens up! You are so excited to see inside despite the lack of light present in the hallway")
+                    print(f" ")
+                    print(f"---")
+                    print(f" ")
+                    break
+            elif player.user_input == '3':
+                    print(f"  ")
+                    print(f"---")
+                    print(f"  ")
+                    player.user_input = input("You have choosen the 3rd drawer, would you like to open the (1)st or (2)nd drawer now? ")
+                    if player.user_input == '1':
+                        print(f"  ")
+                        print(f"---")
+                        print(f"  ")
+                        print("You have choosen the 1st drawer as the 2nd choice. You now only have one more option, the 2nd drawer. You open the 2nd drawer and then (with a drip of sweat) try to open the final fourth drawer; however, it did not budge. Please try a different combination")
+                        print(f" ")
+                        print(f"---")
+                        print(f" ")
+                        continue
+                    elif player.user_input == '2':
+                        print(f"  ")
+                        print(f"---")
+                        print(f"  ")
+                        print("You have choosen the 2nd drawer as the 2nd choice. You now only have one more option, the 1st drawer. You open the 1st drawer and then (with a drip of sweat running down your cheek) try to open the final fourth drawer; however, it did not budge. Please try a different combination")
+                        print(f" ")
+                        print(f"---")
+                        print(f" ")
+                        continue
+            else:
+                print("Invalid input")
 
 class Game():
     def __init__(self):
