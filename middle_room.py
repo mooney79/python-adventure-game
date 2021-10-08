@@ -78,7 +78,12 @@ class MiddleRoom(Room):
                 print(f"  ")
                 print(f"---")
                 print(f"  ")
-                input("Press (c) to continue and push through this hangover: ") 
+                while True:
+                    player.user_input = input("Press (c) to continue and push through this hangover: ") 
+                    if player.user_input == "c":
+                        break
+                    else:
+                        continue
             else:
                 print("Invalid input")
 
@@ -92,7 +97,12 @@ class MiddleRoom(Room):
         print(f"  ")
         print(f"---")
         print(f"  ")
-        input("You find the doorframe and look out into the dark abyss. Press (c) to continue out into tbe void: ") 
+        while True:
+            player.user_input = input("You find the doorframe and look out into the dark abyss. Press (c) to continue out into tbe void: ") 
+            if player.user_input == "c":
+                break
+            else:
+                continue
         print(f"  ")
         print(f"---")
         print(f"  ")
@@ -126,6 +136,8 @@ class MiddleRoom(Room):
                     print(f"---")
                     print(f" ")
                     continue
+                else:
+                    print("Invalid input, try again")
             elif player.user_input == '2':
                 print(f"  ")
                 print(f"---")
@@ -152,6 +164,8 @@ class MiddleRoom(Room):
                     print(f"---")
                     print(f" ")
                     break
+                else:
+                    print("Invalid input, try again")
             elif player.user_input == '3':
                     print(f"  ")
                     print(f"---")
@@ -175,8 +189,29 @@ class MiddleRoom(Room):
                         print(f"---")
                         print(f" ")
                         continue
+                    else:
+                        print("Invalid input, try again")
+
+        print(f"  ")
+        print(f"---")
+        print(f"  ")
+        print(f"You open the fourth drawer and your hands are frantically moving everywhere inside from edges to corners to the middle. You cant find anything. You began to calm down and slowly move your hands across the bottom of the secret drawer. As you move our hands slowly you come across something small. You feel back over it again and then pick it up. It seems to be matches. AH HA! Light! You strike one match as a halo of light surrounds a 3 foot radius.") 
+        print(f"  ")
+        print(f"---")
+        print(f"  ")
+        while True:
+            player.user_input = input("You can now see three feet in front of you. Press (c) to continue walking down the corridor: ") 
+            if player.user_input == "c":
+                break
             else:
-                print("Invalid input")
+                continue
+        print(f"  ")
+        print(f"---")
+        print(f"  ")
+        print("You're elated to find matches, but your first match just went out. You look down and strike another match. While your second match is lit, you count the remaining matches. Looks like you have 8 matches left..... 8 matches left to find a way out of this first floor.....") 
+        print(f"  ")
+        print(f"---")
+        print(f"  ")
 
 class Game():
     def __init__(self):
