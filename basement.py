@@ -11,7 +11,7 @@ from random import randint
 class Player():
     
     def __init__(self, name):
-        self.name = "Mady" #Needs to be "" by default.  This for testing
+        self.name = "Kirk" #Needs to be "" by default.  This for testing
         self.weapon = None
         # self.has_key_one = False
         # self.has_key_two = False
@@ -59,6 +59,11 @@ def pick_random_area(current_area):
 def entrance_dark_first():
     global timecounter
     next_step = False
+    print(f"  ")
+    print(f"  ")
+    print(f"Chapter Three: The Basement")
+    print(f"-----------------------------")
+    print(f"  ")
     print("""
 The last of your matches burns out as you slowly descend the stairs into the basement, your hand resting along 
 the wall as you move carefully from step to step.  Without the comfort of either matches or flashlight, the 
@@ -591,6 +596,6 @@ def pick_lock():
     freedom()
 
 # PLAYING THE GAME BELOW HERE
-player = Player('Player')
+player = Player()
 lock_solution = get_lock_solution()
 entrance_dark_first()
