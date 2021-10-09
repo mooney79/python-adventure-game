@@ -3,7 +3,7 @@
 class Player():
     
     def __init__(self, name):
-        self.name = name
+        self.name = ""
         self.weapon = None
         self.has_key_one = False
         self.has_key_two = False
