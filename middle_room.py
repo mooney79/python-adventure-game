@@ -9,7 +9,7 @@ class Player():
         self.has_key_three = False
         self.health = 3
         self.attire = None
-        self.num_matches = 0
+        self.num_matches = 3
         self.user_input = ""
 
 class Room():
@@ -208,10 +208,82 @@ class MiddleRoom(Room):
         print(f"  ")
         print(f"---")
         print(f"  ")
-        print("You're elated to find matches, but your first match just went out. You look down and strike another match. While your second match is lit, you count the remaining matches. Looks like you have 8 matches left..... 8 matches left to find a way out of this first floor.....") 
+        print("You're elated to find matches, but your first match just went out. You see the bathroom and strike another match to take a leak. As you're finishing up, you look down and strike another match. While your third match is lit, you count the remaining matches. Looks like you have 3 matches left..... 3 matches left to find a way out of this first floor...... ") 
         print(f"  ")
         print(f"---")
         print(f"  ")
+        while True:
+            print(f"  ")
+            print(f"---")
+            print(f"  ")
+            print("You're back in the hallway next to the dresser. You need to find an exit while you have these 5 matches")
+            print(f"  ")
+            print(f"  ")
+            print(f"  ")
+            player.user_input = input("You walk down the corridor until you hit a deadend. To the left you see a dining room with an entire meal spread out on the table; however, the contents are horribly spoiled. To the right you see a long run leading to a kitchen area. Do you want to go towards the (d)ining room area or walk towards the (k)itchen? ")
+            if player.user_input == 'd':
+                print(f"  ")
+                print(f"---")
+                print(f"  ")
+                player.user_input = input(f"You light a match and head into the dining room and see the spoiled food in front of you on the table. Your stomach makes a loud noise and you realize you're low on energy. Looks like there's 2 matches left. Do you want to pop a seat and take a (b)ite of rotten chicken leg or (c)ontinue exploring the room? ")
+                if player.user_input == 'b':
+                    print(f"  ")
+                    print(f"---")
+                    print(f"  ")
+                    print(f"You strike the second to last match and feast on the wormy fried chicken in front of you. It's not Popeyes, but it will do for now. ")
+                    print(f"  ")
+                    print(f"---")
+                    print(f"  ")
+                    player.user_input = input("You have one match left, but see a corridor leading off the dining room. You can either go down the (c)orridor or turn back around towrads the (k)itchen? ")
+                    if player.user_input == "c":
+                        print("You head down the corridor and suddenly get stomach pains. You collapase on the ground with intense stomach pains. You shouldn't have eaten that rotten chicken leg. You crawl towards the end of the corridor. You reach a deadend at the end of the hallway with two windowless and furniture-less rooms on each side. You ball up into a fetal position and can't move. Try again.")
+                    elif player.user_input == 'k':
+                        print("You try to head back to your previous crossroads in the direciton of the kitchen but have to stop and lean against the wall. You're feeling awful after ingesting so many worms. You take a few more steps before puking on the floor. You lay down and fall into an eternal sleep. Try again.")
+                    else:
+                        print("Invalid input. Try again.")
+                elif player.user_input == 'c':
+                    print("You strike the second to last match and start to look around the room from your seat. You get up from the dinner table and explore the rest of the room. You find a nice cabinet full of China dinnerware, but cannot find anything of use in there. You realize you're going to run out of light now that you're down to one match and apathy sets in. You decide to strike the last match and sit down for another rotten chicken leg. Intense stomach pains commence. Try Again.")
+                else:
+                    print("Invalid input. Try again.")
+
+
+
+            elif player.user_input == 'k':
+                print(f"  ")
+                print(f"---")
+                print(f"  ")
+                player.user_input = input(f"You light your second to last match and head into the kitchen area. Immediately to the right you see a door. You try to open it with all your conjured strength. It won't budge. It must be locked from the other side. You move on to the kitchen. You see a butcher knife, a fire extinguisher, and a chair. Should you try opening the door with the (k)nife, (f)ire extinguisher or (c)hair?  ")
+                if player.user_input == 'k':
+                    print(f"  ")
+                    print(f"---")
+                    print(f"  ")
+                    print(f"You strike your last match. Hold it between your teeth and try knifing the door; however, you're merey putting small slits into the wooden door. The match runs out between your teeth. It burns, but you don't give it much thought as you slump down on the door defeated. Try again.")
+                    print(f"  ")
+                    print(f"---")
+                    print(f"  ")
+                elif player.user_input == 'f':
+                    print(f"  ")
+                    print(f"---")
+                    print(f"  ")
+                    print(f"You strike your last match. Hold it between your teeth and knock at the wooden door with he fire extinguisher. You easily tear it down with the weight of this baddie. You look through the other side and realize it's a basement to another abyss")
+                    print(f"  ")
+                    print(f"---")
+                    print(f"  ")
+                    break
+                elif player.user_input == 'c':
+                    print(f"  ")
+                    print(f"---")
+                    print(f"  ")
+                    print(f"You strike your last match. Hold it between your teeth and knock at the wooden door with the wooden chair. The chair breaks instantly upon contact. You get frustrated and flip the kitchen table. You feel as if this house as won. Try again.")
+                    print(f"  ")
+                    print(f"---")
+                    print(f"  ")
+                else:
+                    print("Invalid input. Try again.")
+            else:
+                print("Invalid input. Try again.")
+
+
 
 class Game():
     def __init__(self):
@@ -221,6 +293,7 @@ class Game():
         player = Player()
         middle_room = MiddleRoom()
         middle_room.play_room(player)
+
 
 game = Game()
 game.play_game()
