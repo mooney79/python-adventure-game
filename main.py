@@ -56,8 +56,8 @@ if __name__ == '__main__':
                          .       [[[|]]]    .
                          !!!!!!!!|--_--|!!!!!   
                          [[[[[[[[\_(X)_/]]]]]
-                 .-.     /-_--__-/_--_-\-_--\
-                 |=|    /-_---__/__-__-_\__-_\
+                 .-.     /-_--__-/_--_-\-_--\\
+                 |=|    /-_---__/__-__-_\__-_\\
              . . |=| ._/-__-__\===========/-__\_
              !!!!!!!!!\========[ /]]|[[\ ]=====/
             /-_--_-_-_[[[[[[[[[||==  == ||]]]]]]
@@ -842,6 +842,7 @@ in the (h)ole, or (l)eave this area?""")
 def secret_room():
     global timecounter
     global has_pick
+    global player
     next_step = False
     print()
     print('/////////////////////////////////////////////')
@@ -916,6 +917,7 @@ chain has been threaded through the handles and secured with a sturdy, though ol
 
 
 def freedom():
+    global player
     print(f"You emerge into the chill October night air!  You've managed to escape!  The basement area took you {timecounter} turns, {player.name}.")
     print("""             
                                 ,.        ,.      ,.
@@ -1084,6 +1086,6 @@ def pick_lock():
     freedom()
 
 # PLAYING THE GAME BELOW HERE
-player = Player()
+# player = Player()
 lock_solution = get_lock_solution()
 entrance_dark_first()
